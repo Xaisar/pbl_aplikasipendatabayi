@@ -20,11 +20,22 @@ class LoginView extends GetView<LoginController> {
               //form login
               Expanded(
                   child: Container(
-                      decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: const BorderRadiusDirectional.only(
-                    topStart: Radius.circular(30), topEnd: Radius.circular(30)),
-              )))
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: const BorderRadiusDirectional.only(
+                      topStart: Radius.circular(30),
+                      topEnd: Radius.circular(30)),
+                ),
+                padding: const EdgeInsets.all(8.0),
+                alignment: Alignment.topCenter,
+                child: const Text(
+                  "LOGIN",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
             ],
           ),
         ));

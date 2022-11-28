@@ -1,5 +1,4 @@
 import 'package:aplikasipendatabayi/app/modules/login/views/login_view.dart';
-import 'package:aplikasipendatabayi/app/routes/app_pages.dart';
 import 'package:aplikasipendatabayi/app/views/views/splash_screen_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class IndexView extends GetView<IndexController> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const SplashScreenView();
           } else {
-            return LoginView();
+            return const LoginView();
           }
         });
   }

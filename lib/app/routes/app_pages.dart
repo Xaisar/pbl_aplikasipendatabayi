@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
-
 import '../modules/grafik/bindings/grafik_binding.dart';
 import '../modules/grafik/views/grafik_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/index/bindings/index_binding.dart';
+import '../modules/index/views/index_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/pendataan/bindings/pendataan_binding.dart';
@@ -16,7 +17,8 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  // ignore: constant_identifier_names
+  static const INITIAL = Routes.INDEX;
 
   static final routes = [
     GetPage(
@@ -38,6 +40,11 @@ class AppPages {
       name: _Paths.PENDATAAN,
       page: () => const PendataanView(),
       binding: PendataanBinding(),
+    ),
+    GetPage(
+      name: _Paths.INDEX,
+      page: () => const IndexView(),
+      binding: IndexBinding(),
     ),
     GetPage(
       name: _Paths.RIWAYAT,

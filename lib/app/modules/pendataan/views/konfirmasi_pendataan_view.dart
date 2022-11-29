@@ -1,11 +1,11 @@
+import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:aplikasipendatabayi/theme.dart';
 
 import 'package:get/get.dart';
 
-class DevelopmentView extends GetView {
-  const DevelopmentView({Key? key}) : super(key: key);
+class KonfirmasiPendataanView extends GetView {
+  const KonfirmasiPendataanView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,15 +38,17 @@ class DevelopmentView extends GetView {
                 SizedBox(
                     height: Get.width * 0.8,
                     width: Get.width,
-                    child: Image.asset('assets/images/maintance.png')),
+                    child: Image.asset('assets/images/Done.png')),
                 Container(
                     alignment: Alignment.center,
                     // margin: const EdgeInsets.only(top: 15),
                     child: Text(
-                      'Maaf, Halaman Ini \nSedang Dalam Pengembangan',
+                      'Selamat!\n Data Berhasil Disimpan',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
-                          color: Colors.grey[600], fontSize: 25),
+                          color: const Color(0xFF1CAE81),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     )),
                 SizedBox(
                   height: Get.height * 0.15,

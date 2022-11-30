@@ -190,6 +190,7 @@ class LoginView extends GetView<LoginController> {
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10),
+
                 child: Text("PUSKESMAS KABAT",
                     style: GoogleFonts.acme(fontSize: 30, color: Colors.white)),
               )

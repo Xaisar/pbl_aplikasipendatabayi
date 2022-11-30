@@ -1,12 +1,14 @@
+import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreenView extends GetView {
   const SplashScreenView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1CAE81),
+      backgroundColor: green1,
       body: Center(
           child: Stack(
         fit: StackFit.expand,
@@ -27,13 +29,8 @@ class SplashScreenView extends GetView {
               ),
               Container(
                 margin: const EdgeInsets.only(top: 20, bottom: 60),
-                child: const Text(
-                  "PUSKESMAS KABAT",
-                  style: TextStyle(
-                      fontSize: 32,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
+                child: Text("PUSKESMAS KABAT",
+                    style: GoogleFonts.acme(fontSize: 30, color: Colors.white)),
               )
             ],
           ),
@@ -44,9 +41,10 @@ class SplashScreenView extends GetView {
             children: [
               Container(
                 margin: const EdgeInsets.only(bottom: 15),
-                child: const Text("Version 1.0",
+                child: Text("Version 1.0.1",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 20)),
+                    style:
+                        GoogleFonts.roboto(fontSize: 18, color: Colors.white)),
               )
             ],
           )

@@ -16,7 +16,7 @@ class IndexView extends GetView<IndexController> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const SplashScreenView();
           } else {
-            return const LoginView();
+            return LoginView();
           }
         });
   }

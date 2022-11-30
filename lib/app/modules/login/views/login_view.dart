@@ -1,11 +1,12 @@
+import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+  final loginC = LoginController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,102 +21,148 @@ class LoginView extends GetView<LoginController> {
               //form login
               Expanded(
                   child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: const BorderRadiusDirectional.only(
-                      topStart: Radius.circular(30),
-                      topEnd: Radius.circular(30)),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
-                alignment: Alignment.topCenter,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.black87,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadiusDirectional.only(
+                            topStart: Radius.circular(30),
+                            topEnd: Radius.circular(30)),
                       ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    TextFormField(
-                      // controller: txtUsername,
-                      decoration: InputDecoration(
-                          label: Text("Username"),
-                          border: OutlineInputBorder(
-                              borderRadius: new BorderRadius.circular(15)),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black87)),
-                          prefixIcon: Icon(
-                            Icons.person,
-                            size: 20,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Get.width * 0.1,
+                          vertical: Get.width * 0.08),
+                      alignment: Alignment.topCenter,
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                alignment: Alignment.topCenter,
+                                margin:
+                                    EdgeInsets.only(bottom: Get.width * 0.08),
+                                child: Text('Login',
+                                    style: GoogleFonts.roboto(
+                                        color: Colors.black, fontSize: 32)),
+                              ),
+                              //USERNAME
+                              Container(
+                                margin: const EdgeInsets.only(bottom: 40),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      label: Text(
+                                        "Username",
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              color: Colors.blue),
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      prefixIcon: const Icon(
+                                        Icons.person,
+                                        size: 20,
+                                      ),
+                                      hintText: "Masukan Username",
+                                      hintStyle: GoogleFonts.roboto(
+                                          color: Colors.black),
+                                      labelStyle: GoogleFonts.roboto(
+                                          color: Colors.black)),
+                                  keyboardType: TextInputType.emailAddress,
+                                ),
+                              ),
+                              //PASSWORD
+                              Container(
+                                margin: const EdgeInsets.only(bottom: 2),
+                                child: Obx(() => TextFormField(
+                                      obscureText: loginC.verify.value,
+                                      keyboardType:
+                                          TextInputType.visiblePassword,
+                                      decoration: InputDecoration(
+                                          label: Text(
+                                            "Password",
+                                            style: GoogleFonts.roboto(
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15)),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.blue),
+                                              borderRadius:
+                                                  BorderRadius.circular(15)),
+                                          prefixIcon: const Icon(
+                                            Icons.key,
+                                            size: 20,
+                                          ),
+                                          suffixIcon: GestureDetector(
+                                            onTap: () {
+                                              loginC.passwordVisibility();
+                                            },
+                                            child: Icon(
+                                              loginC.verify.value
+                                                  ? Icons.visibility_off
+                                                  : Icons.visibility,
+                                              color: loginC.verify.value
+                                                  ? Colors.grey
+                                                  : Colors.blue,
+                                            ),
+                                          ),
+                                          hintText: "Masukan Password",
+                                          hintStyle: GoogleFonts.roboto(
+                                              color: Colors.black),
+                                          labelStyle: GoogleFonts.roboto(
+                                              color: Colors.black)),
+                                    )),
+                              ),
+                              //lUPA PASSWORD
+                              Container(
+                                alignment: Alignment.topRight,
+                                child: TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Lupa Password?',
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 15, color: Colors.black),
+                                    )),
+                              )
+                            ],
                           ),
-                          hintText: "Masukan Username",
-                          hintStyle: TextStyle(color: Colors.black87),
-                          labelStyle: TextStyle(color: Colors.black87)),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    TextFormField(
-                      // controller: txtPassword,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: new BorderRadius.circular(15)),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black87)),
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            size: 20,
-                          ),
-                          hintText: "Masukan Password",
-                          hintStyle: TextStyle(color: Colors.black87),
-                          labelText: "Password",
-                          labelStyle: TextStyle(color: Colors.black87)),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: Text("Lupa Password"),
-                    ),
-                    SizedBox(
-                      height: 150,
-                    ),
-                    Card(
-                      color: Color(0xFF1CAE81),
-                      elevation: 8,
-                      child: Container(
-                        height: 55,
-                        child: InkWell(
-                          splashColor: Colors.white,
-                          onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => const HomeRoute()),
-                            // );
-                          },
-                          child: Center(
-                            child: Text(
-                              "Masuk",
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ))
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: Get.width * 0.1),
+                                child: SizedBox(
+                                  height: 50,
+                                  width: Get.width * 0.7,
+                                  child: ElevatedButton(
+                                      style: TextButton.styleFrom(
+                                          backgroundColor: green1,
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(15)))),
+                                      onPressed: () {},
+                                      child: Text('Masuk',
+                                          style: GoogleFonts.roboto(
+                                              color: Colors.white,
+                                              fontSize: 18))),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      )))
             ],
           ),
         ));
@@ -130,8 +177,8 @@ class LoginView extends GetView<LoginController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: Get.width * 0.25,
-                height: Get.width * 0.25,
+                width: Get.width * 0.26,
+                height: Get.width * 0.26,
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
                   child: Image.asset(
@@ -143,13 +190,9 @@ class LoginView extends GetView<LoginController> {
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: const Text(
-                  "PUSKESMAS KABAT",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
+
+                child: Text("PUSKESMAS KABAT",
+                    style: GoogleFonts.acme(fontSize: 30, color: Colors.white)),
               )
             ]));
   }

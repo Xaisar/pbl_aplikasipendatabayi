@@ -1,6 +1,5 @@
-import 'package:aplikasipendatabayi/app/modules/index/views/index_view.dart';
-import 'package:aplikasipendatabayi/app/modules/riwayat/views/riwayat_view.dart';
-import 'package:aplikasipendatabayi/app/modules/pendataan/views/konfirmasi_pendataan_view.dart';
+import 'package:aplikasipendatabayi/app/modules/login/views/login_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +11,6 @@ void main() {
     title: "Puskemas Kabat",
     // initialRoute: Routes.INDEX,
     // getPages: AppPages.routes,
-    home: RiwayatView(),
+    home: LoginView(),
   ));
 }

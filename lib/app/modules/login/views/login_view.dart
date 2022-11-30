@@ -146,7 +146,7 @@ class LoginView extends GetView<LoginController> {
                 child: const Text(
                   "PUSKESMAS KABAT",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 30,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),

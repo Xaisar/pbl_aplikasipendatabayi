@@ -36,3 +36,8 @@ flutter:
     - assets/logo/
     - assets/images/
     - assets/icons/
+
+  fonts:
+    - family: MyIcon
+      fonts:
+        - asset: assets/icons/MyIcon.ttf

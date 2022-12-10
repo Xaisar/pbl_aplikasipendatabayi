@@ -1,9 +1,17 @@
 import 'package:get/get.dart';
 
 class PendataanController extends GetxController {
-  //TODO: Implement PendataanController
+  var searchPuskesmas = false.obs;
+  var searchBayi = false.obs;
 
-  final count = 0.obs;
+  void searchView(search) {
+    search.value = true;
+  }
+
+  void searchClose(search) {
+    search.value = false;
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +26,4 @@ class PendataanController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

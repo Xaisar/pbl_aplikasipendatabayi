@@ -37,7 +37,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PENDATAAN,
-      page: () => const PendataanView(),
+      page: () => PendataanView(),
       binding: PendataanBinding(),
     ),
     GetPage(

@@ -23,7 +23,7 @@ class PendataanView extends GetView<PendataanController> {
           children: [
             Container(
               width: Get.width,
-              height: Get.width * 0.25,
+              height: Get.width * 0.2,
               decoration: BoxDecoration(
                   color: green2,
                   borderRadius:
@@ -36,6 +36,7 @@ class PendataanView extends GetView<PendataanController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
+                          padding: EdgeInsets.symmetric(vertical: 5),
                           margin: const EdgeInsets.only(
                               top: 15, left: 20, right: 20),
                           decoration: BoxDecoration(
@@ -59,6 +60,8 @@ class PendataanView extends GetView<PendataanController> {
                             ),
                             title: Text(
                               'Puskesmas andara',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,

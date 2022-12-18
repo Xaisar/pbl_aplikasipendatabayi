@@ -95,7 +95,9 @@ class PendataanView extends GetView<PendataanController> {
           Icons.arrow_back,
           color: Colors.black,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.back();
+        },
       ),
       title: Text('Back',
           style: GoogleFonts.roboto(

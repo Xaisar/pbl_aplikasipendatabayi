@@ -1,6 +1,6 @@
 {
-    "name": "aplikasipendatabayi",
-    "short_name": "aplikasipendatabayi",
+    "name": "pbl_aplikasipendatabayi",
+    "short_name": "pbl_aplikasipendatabayi",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

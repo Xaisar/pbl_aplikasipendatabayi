@@ -269,7 +269,9 @@ class HomeView extends GetView<HomeController> {
                               ],
                             ),
                             selected: true,
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(Routes.RIWAYAT);
+                            },
                           ),
                         );
                       }),

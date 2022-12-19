@@ -56,218 +56,28 @@ class RiwayatView extends GetView<RiwayatController> {
                   ))
         ],
       ),
-      body: Column(children: [
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 10),
-            width: Get.width,
-            child: Column(
-              children: [
-                Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[400]!, width: 4))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          alignment: Alignment.topLeft,
-                          child: Text('NIK Bayi',
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500)),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Icon(
-                                  Icons.abc,
-                                  size: 30,
-                                )),
-                            Text("3510164409120005",
-                                style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    )),
-                Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[400]!, width: 4))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          alignment: Alignment.topLeft,
-                          child: Text('Nama Bayi',
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500)),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Icon(
-                                  Icons.abc,
-                                  size: 30,
-                                )),
-                            Text("Nur Lailatul Hidayah",
-                                style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    )),
-                Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[400]!, width: 4))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          alignment: Alignment.topLeft,
-                          child: Text('Tanggal Pelaksanaan',
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500)),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Icon(
-                                  Icons.abc,
-                                  size: 30,
-                                )),
-                            Text("08 / Maret / 2022",
-                                style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    )),
-                Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[400]!, width: 4))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          alignment: Alignment.topLeft,
-                          child: Text('Tempat Posyandu',
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500)),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Icon(
-                                  Icons.abc,
-                                  size: 30,
-                                )),
-                            Text("Jl.Bomo No.12 Rt.01 Rw.03. Pakistaji",
-                                style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    )),
-              ],
-            )),
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 15),
-            width: Get.width,
-            child: Column(
-              children: [
-                Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[400]!, width: 4))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          alignment: Alignment.topLeft,
-                          child: Text('Nama Bidan',
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500)),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Icon(
-                                  Icons.abc,
-                                  size: 30,
-                                )),
-                            Text("Selena Gomez",
-                                style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    )),
-              ],
-            )),
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            color: Colors.white,
-            width: Get.width,
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              color: Colors.white,
+              margin: const EdgeInsets.only(bottom: 10),
+              width: Get.width,
+              child: Column(
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                          child: Column(
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             margin: const EdgeInsets.all(4),
                             alignment: Alignment.topLeft,
-                            child: Text('Tinggi Badan',
+                            child: Text('NIK Bayi',
                                 style: GoogleFonts.roboto(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -281,7 +91,7 @@ class RiwayatView extends GetView<RiwayatController> {
                                     Icons.abc,
                                     size: 30,
                                   )),
-                              Text("76(-1.00)",
+                              Text("3510164409120005",
                                   style: GoogleFonts.roboto(
                                       color: Colors.black,
                                       fontSize: 15,
@@ -290,18 +100,19 @@ class RiwayatView extends GetView<RiwayatController> {
                           )
                         ],
                       )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          child: Column(
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             margin: const EdgeInsets.all(4),
                             alignment: Alignment.topLeft,
-                            child: Text('Berat Badan',
+                            child: Text('Nama Bayi',
                                 style: GoogleFonts.roboto(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -315,7 +126,7 @@ class RiwayatView extends GetView<RiwayatController> {
                                     Icons.abc,
                                     size: 30,
                                   )),
-                              Text(" 9(-1.00)",
+                              Text("Nur Lailatul Hidayah",
                                   style: GoogleFonts.roboto(
                                       color: Colors.black,
                                       fontSize: 15,
@@ -324,21 +135,254 @@ class RiwayatView extends GetView<RiwayatController> {
                           )
                         ],
                       )),
-                    ],
-                  ),
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(4),
+                            alignment: Alignment.topLeft,
+                            child: Text('Tanggal Pelaksanaan',
+                                style: GoogleFonts.roboto(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: const Icon(
+                                    Icons.abc,
+                                    size: 30,
+                                  )),
+                              Text("08 / Maret / 2022",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold))
+                            ],
+                          )
+                        ],
+                      )),
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(4),
+                            alignment: Alignment.topLeft,
+                            child: Text('Tempat Posyandu',
+                                style: GoogleFonts.roboto(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: const Icon(
+                                    Icons.abc,
+                                    size: 30,
+                                  )),
+                              Text("Jl.Bomo No.12 Rt.01 Rw.03. Pakistaji",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold))
+                            ],
+                          )
+                        ],
+                      )),
                 ],
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(color: Colors.grey[400]!, width: 4))),
-            )),
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 10),
-            width: Get.width,
-            child: Column(
-              children: [
+              )),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              color: Colors.white,
+              margin: const EdgeInsets.only(bottom: 15),
+              width: Get.width,
+              child: Column(
+                children: [
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(4),
+                            alignment: Alignment.topLeft,
+                            child: Text('Nama Bidan',
+                                style: GoogleFonts.roboto(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: const Icon(
+                                    Icons.abc,
+                                    size: 30,
+                                  )),
+                              Text("Selena Gomez",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold))
+                            ],
+                          )
+                        ],
+                      )),
+                ],
+              )),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              color: Colors.white,
+              width: Get.width,
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(4),
+                              alignment: Alignment.topLeft,
+                              child: Text('Tinggi Badan',
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500)),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                    margin: const EdgeInsets.only(left: 10),
+                                    child: const Icon(
+                                      Icons.abc,
+                                      size: 30,
+                                    )),
+                                Text("76(-1.00)",
+                                    style: GoogleFonts.roboto(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold))
+                              ],
+                            )
+                          ],
+                        )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(4),
+                              alignment: Alignment.topLeft,
+                              child: Text('Berat Badan',
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500)),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                    margin: const EdgeInsets.only(left: 10),
+                                    child: const Icon(
+                                      Icons.abc,
+                                      size: 30,
+                                    )),
+                                Text(" 9(-1.00)",
+                                    style: GoogleFonts.roboto(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold))
+                              ],
+                            )
+                          ],
+                        )),
+                      ],
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom:
+                            BorderSide(color: Colors.grey[400]!, width: 4))),
+              )),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              color: Colors.white,
+              margin: const EdgeInsets.only(bottom: 10),
+              width: Get.width,
+              child: Column(
+                children: [
+                  Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.grey[400]!, width: 4))),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(4),
+                            alignment: Alignment.topLeft,
+                            child: Text('Umur',
+                                style: GoogleFonts.roboto(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: const Icon(
+                                    Icons.abc,
+                                    size: 30,
+                                  )),
+                              Text("3 Bulan 15 Hari",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold))
+                            ],
+                          )
+                        ],
+                      )),
+                ],
+              )),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              color: Colors.white,
+              width: Get.width,
+              child: Column(children: [
                 Container(
                     margin: const EdgeInsets.only(bottom: 10),
                     decoration: BoxDecoration(
@@ -351,7 +395,7 @@ class RiwayatView extends GetView<RiwayatController> {
                         Container(
                           margin: const EdgeInsets.all(4),
                           alignment: Alignment.topLeft,
-                          child: Text('Umur',
+                          child: Text('Posisi',
                               style: GoogleFonts.roboto(
                                   color: Colors.black,
                                   fontSize: 18,
@@ -365,7 +409,7 @@ class RiwayatView extends GetView<RiwayatController> {
                                   Icons.abc,
                                   size: 30,
                                 )),
-                            Text("3 Bulan 15 Hari",
+                            Text("Terlentang",
                                 style: GoogleFonts.roboto(
                                     color: Colors.black,
                                     fontSize: 15,
@@ -374,50 +418,9 @@ class RiwayatView extends GetView<RiwayatController> {
                         )
                       ],
                     )),
-              ],
-            )),
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            color: Colors.white,
-            width: Get.width,
-            child: Column(children: [
-              Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  decoration: BoxDecoration(
-                      border: Border(
-                          bottom:
-                              BorderSide(color: Colors.grey[400]!, width: 4))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(4),
-                        alignment: Alignment.topLeft,
-                        child: Text('Posisi',
-                            style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500)),
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                              margin: const EdgeInsets.only(left: 10),
-                              child: const Icon(
-                                Icons.abc,
-                                size: 30,
-                              )),
-                          Text("Terlentang",
-                              style: GoogleFonts.roboto(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold))
-                        ],
-                      )
-                    ],
-                  )),
-            ])),
-      ]),
+              ])),
+        ]),
+      ),
     );
   }
 }

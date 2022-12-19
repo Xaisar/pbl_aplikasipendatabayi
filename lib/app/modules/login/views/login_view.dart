@@ -52,6 +52,9 @@ class LoginView extends GetView<LoginController> {
                               Container(
                                 margin: const EdgeInsets.only(bottom: 40),
                                 child: TextFormField(
+                                  onChanged: (value) {
+                                    loginC.user.username = value;
+                                  },
                                   decoration: InputDecoration(
                                       label: Text(
                                         "Username",
@@ -83,6 +86,9 @@ class LoginView extends GetView<LoginController> {
                               Container(
                                 margin: const EdgeInsets.only(bottom: 2),
                                 child: Obx(() => TextFormField(
+                                      onChanged: (value) {
+                                        loginC.user.password = value;
+                                      },
                                       obscureText: loginC.verify.value,
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -157,7 +163,7 @@ class LoginView extends GetView<LoginController> {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(15)))),
                                       onPressed: () {
-                                        Get.offAllNamed(Routes.HOME);
+                                        loginC.login(context);
                                       },
                                       child: Text('Masuk',
                                           style: GoogleFonts.roboto(

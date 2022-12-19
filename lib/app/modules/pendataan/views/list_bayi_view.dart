@@ -1,3 +1,4 @@
+import 'package:aplikasipendatabayi/app/modules/pendataan/views/form_pendataan_view.dart';
 import 'package:aplikasipendatabayi/my_icon_icons.dart';
 import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class ListBayiView extends GetView {
                           child: ListTile(
                             selected: true,
                             onTap: () {
-                              print(Get.arguments);
+                              Get.to(FormPendataanView());
                             },
                             leading: Icon(
                               MyIcon.people,

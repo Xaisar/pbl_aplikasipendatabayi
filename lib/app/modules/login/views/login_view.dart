@@ -1,4 +1,6 @@
+import 'package:aplikasipendatabayi/app/views/views/development_view.dart';
 import 'package:aplikasipendatabayi/theme.dart';
+import 'package:aplikasipendatabayi/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -127,7 +129,9 @@ class LoginView extends GetView<LoginController> {
                               Container(
                                 alignment: Alignment.topRight,
                                 child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.to(const DevelopmentView());
+                                    },
                                     child: Text(
                                       'Lupa Password?',
                                       style: GoogleFonts.roboto(
@@ -152,7 +156,9 @@ class LoginView extends GetView<LoginController> {
                                           shape: const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(15)))),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Get.offAllNamed(Routes.HOME);
+                                      },
                                       child: Text('Masuk',
                                           style: GoogleFonts.roboto(
                                               color: Colors.white,

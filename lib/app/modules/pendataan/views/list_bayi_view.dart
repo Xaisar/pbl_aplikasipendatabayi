@@ -22,7 +22,7 @@ class ListBayiView extends GetView {
           children: [
             Container(
               width: Get.width,
-              height: Get.width * 0.25,
+              height: Get.width * 0.2,
               decoration: BoxDecoration(
                   color: green2,
                   borderRadius:
@@ -56,16 +56,21 @@ class ListBayiView extends GetView {
                               size: 40,
                             ),
                             title: Text(
-                              'Puskesmas Robito',
+                              'Putra Questy',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.roboto(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
                             ),
-                            subtitle: Text(
-                                'Jl. Jendral Sudirman, rt. 20, kel. Madurejo',
+                            subtitle: Text('08546372635271',
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 14, fontWeight: FontWeight.bold)),
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey[700])),
                           )),
                       (index + 1 == 10
                           ? const SizedBox(height: 15)

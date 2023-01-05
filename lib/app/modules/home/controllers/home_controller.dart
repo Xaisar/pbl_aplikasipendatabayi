@@ -17,7 +17,9 @@ class HomeController extends GetxController {
       bidan = Bidan.fromJson(responseBidan.body);
       print(bidan.nama);
       print(bidan.idPosyandu);
-      PosyanduProvider().postPosyandu(id).then((responsePosyandu) {
+      PosyanduProvider()
+          .postPosyandu(bidan.idPosyandu!)
+          .then((responsePosyandu) {
         posyandu = Posyandu.fromJson(responsePosyandu.body);
         print(posyandu.nama);
         print(posyandu.jadwal.toString());

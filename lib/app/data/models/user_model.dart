@@ -1,14 +1,16 @@
 class User {
   String? username;
   String? password;
-  String? idPengguna;
+  int? idPengguna;
+  bool? auth;
+  String? error;
 
-  User({this.username, this.password, this.idPengguna});
+  User({this.username, this.password, this.idPengguna, this.auth, this.error});
 
-  User.fromJson(Map<String, dynamic> json) {
-    username = json['username'];
-    password = json['password'];
-    idPengguna = json['id_pengguna'];
+  fromJson(Map<String, dynamic> json) {
+    idPengguna = json['id'];
+    auth = json['auth'];
+    error = json['pesan'].toString();
   }
 
   Map<String, dynamic> toJson() {

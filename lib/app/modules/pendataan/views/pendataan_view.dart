@@ -13,6 +13,7 @@ class PendataanView extends GetView<PendataanController> {
   final listPuskesmasC = PendataanController();
   @override
   Widget build(BuildContext context) {
+    listPuskesmasC.listPosyandu();
     return Obx(() => Scaffold(
         backgroundColor: Colors.white,
         appBar: (listPuskesmasC.searchPuskesmas.value
@@ -29,59 +30,62 @@ class PendataanView extends GetView<PendataanController> {
                   borderRadius:
                       const BorderRadius.vertical(bottom: Radius.circular(15))),
             ),
-            ListView.builder(
-                itemCount: 10,
-                itemBuilder: (contex, index) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          padding: EdgeInsets.symmetric(vertical: 5),
-                          margin: const EdgeInsets.only(
-                              top: 15, left: 20, right: 20),
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                              boxShadow: const [
-                                BoxShadow(color: Colors.grey, blurRadius: 2)
-                              ]),
-                          child: ListTile(
-                            selected: true,
-                            onTap: () {
-                              Get.to(ListBayiView(),
-                                  arguments: "puskesmas andara");
-                            },
-                            leading: Icon(
-                              MyIcon.home,
-                              size: 40,
-                              color: green1,
-                            ),
-                            title: Text(
-                              'Puskesmas andara',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.roboto(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            ),
-                            subtitle: Text(
-                                'Jl. Jendral Sudirman, rt. 20, kel. Madurejo',
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey[700])),
-                          )),
-                      (index + 1 == 10
-                          ? const SizedBox(height: 15)
-                          : const SizedBox())
-                    ],
-                  );
-                })
+            (listPuskesmasC.posyandu.isEmpty
+                ? Center(child: Text("tidak ada data"))
+                : ListView.builder(
+                    itemCount: listPuskesmasC.posyandu.length,
+                    itemBuilder: (contex, index) {
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              padding: EdgeInsets.symmetric(vertical: 5),
+                              margin: const EdgeInsets.only(
+                                  top: 15, left: 20, right: 20),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(10)),
+                                  color: Colors.white,
+                                  boxShadow: const [
+                                    BoxShadow(color: Colors.grey, blurRadius: 2)
+                                  ]),
+                              child: ListTile(
+                                selected: true,
+                                onTap: () {
+                                  Get.to(ListBayiView(),
+                                      arguments:
+                                          listPuskesmasC.posyandu[index].id);
+                                },
+                                leading: Icon(
+                                  MyIcon.home,
+                                  size: 40,
+                                  color: green1,
+                                ),
+                                title: Text(
+                                  listPuskesmasC.posyandu[index].nama!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                ),
+                                subtitle: Text(
+                                    listPuskesmasC.posyandu[index].alamat!,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.grey[700])),
+                              )),
+                          (index + 1 == 10
+                              ? const SizedBox(height: 15)
+                              : const SizedBox())
+                        ],
+                      );
+                    }))
           ],
         )));
   }

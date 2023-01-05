@@ -1,10 +1,13 @@
+import 'dart:convert';
+import 'dart:ffi';
+
+import 'package:aplikasipendatabayi/theme.dart';
 import 'package:get/get.dart';
 
 import '../models/user_model.dart';
 
 class UserProvider extends GetConnect {
-  String url =
-      "https://posyandu-digital-default-rtdb.asia-southeast1.firebasedatabase.app/";
+  String url = link;
   // @override
   // void onInit() {
   //   httpClient.defaultDecoder = (map) {
@@ -19,10 +22,16 @@ class UserProvider extends GetConnect {
     return response.body;
   }
 
-  Future<dynamic> postUser(String username, String password) async {
-    final response = await post(
-        "$url" + 'user.json', {"username": username, "password": password});
-    return response.body;
+  Future<Response> postUser(String username, String password) async {
+    final dynamic body =
+        json.encode({"username": username, "password": password});
+
+    final response = await post("$url/api/login", body,
+        headers: <String, String>{
+          "Accept": "application/json",
+          "Charset": "utf-8"
+        });
+    return response;
   }
 
   Future<Response> deleteUser(int id) async => await delete('user/$id');

@@ -1,24 +1,41 @@
+import 'dart:convert';
+
+import 'package:aplikasipendatabayi/theme.dart';
 import 'package:get/get.dart';
 
 import '../models/posyandu_model.dart';
 
 class PosyanduProvider extends GetConnect {
-  @override
-  void onInit() {
-    httpClient.defaultDecoder = (map) {
-      if (map is Map<String, dynamic>) return Posyandu.fromJson(map);
-      if (map is List)
-        return map.map((item) => Posyandu.fromJson(item)).toList();
-    };
-    httpClient.baseUrl = 'YOUR-API-URL';
+  String url = link;
+  // @override
+  // void onInit() {
+  //   httpClient.defaultDecoder = (map) {
+  //     if (map is Map<String, dynamic>) return Posyandu.fromJson(map);
+  //     if (map is List)
+  //       return map.map((item) => Posyandu.fromJson(item)).toList();
+  //   };
+  //   httpClient.baseUrl = 'YOUR-API-URL';
+  // }
+
+  Future<Response> getPosyandu() async {
+    final response = await get("$url/api/viewAllPosyandu",
+        headers: <String, String>{
+          "Accept": "application/json",
+          "Charset": "utf-8"
+        });
+    return response;
   }
 
-  Future<Posyandu?> getPosyandu(int id) async {
-    final response = await get('posyandu/$id');
-    return response.body;
+  Future<Response> postPosyandu(int id) async {
+    final dynamic body = json.encode({"id": id});
+
+    final response = await post("$url/api/viewPosyandu", body,
+        headers: <String, String>{
+          "Accept": "application/json",
+          "Charset": "utf-8"
+        });
+    return response;
   }
 
-  Future<Response<Posyandu>> postPosyandu(Posyandu posyandu) async =>
-      await post('posyandu', posyandu);
   Future<Response> deletePosyandu(int id) async => await delete('posyandu/$id');
 }

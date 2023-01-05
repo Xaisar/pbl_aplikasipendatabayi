@@ -136,7 +136,7 @@ class LoginView extends GetView<LoginController> {
                                 alignment: Alignment.topRight,
                                 child: TextButton(
                                     onPressed: () {
-                                      Get.to(const DevelopmentView());
+                                      Get.offAllNamed(Routes.HOME);
                                     },
                                     child: Text(
                                       'Lupa Password?',

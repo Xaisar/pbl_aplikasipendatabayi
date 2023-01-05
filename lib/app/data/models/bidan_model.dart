@@ -1,15 +1,15 @@
 class Bidan {
-  String? id;
+  int? id;
   String? nama;
   String? nip;
-  String? idPosyandu;
+  int? idPosyandu;
 
   Bidan({this.id, this.nama, this.nip, this.idPosyandu});
 
   Bidan.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    nama = json['nama'];
-    nip = json['nip'];
+    nama = json['nama'].toString();
+    nip = json['nip'].toString();
     idPosyandu = json['id_posyandu'];
   }
 

@@ -1,5 +1,5 @@
 class Posyandu {
-  String? id;
+  int? id;
   String? nama;
   String? alamat;
   String? jadwal;
@@ -8,8 +8,8 @@ class Posyandu {
 
   Posyandu.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    nama = json['nama'];
-    alamat = json['alamat'];
+    nama = json['nama'].toString();
+    alamat = json['alamat'].toString();
     jadwal = json['jadwal'];
   }
 

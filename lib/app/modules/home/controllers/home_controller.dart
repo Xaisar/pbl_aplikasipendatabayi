@@ -56,11 +56,6 @@ class HomeController extends GetxController {
               riwayat.add(data);
               print(data);
               print(riwayat);
-              print(riwayat[0].bayi!.nama);
-              print(riwayat[0].posyandu!.id);
-              print(riwayat[0].posyandu!.nama);
-              print(riwayat[0].bayi!.id);
-              print(riwayat[0].tanggal);
             });
           });
         }

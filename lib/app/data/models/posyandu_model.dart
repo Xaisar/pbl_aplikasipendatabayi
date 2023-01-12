@@ -7,7 +7,7 @@ class Posyandu {
   Posyandu({this.id, this.nama, this.alamat, this.jadwal});
 
   Posyandu.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['id_posyandu'];
     nama = json['nama'].toString();
     alamat = json['alamat'].toString();
     jadwal = json['jadwal'];

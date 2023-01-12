@@ -1,3 +1,4 @@
+import 'package:aplikasipendatabayi/app/views/views/development_view.dart';
 import 'package:aplikasipendatabayi/my_icon_icons.dart';
 import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,9 @@ class RiwayatView extends GetView<RiwayatController> {
               )),
           actions: [
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const DevelopmentView());
+                },
                 child: Container(
                     alignment: Alignment.center,
                     height: 35,
@@ -51,20 +54,24 @@ class RiwayatView extends GetView<RiwayatController> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    listItem("NIK Bayi", "362155401117", MyIcon.people),
-                    listItem("Nama Bayi", "Xavier Is'ad Ariel", MyIcon.people),
-                    listItem("Tanggal", "18 Desember 2022", Icons.date_range),
-                    listItem("Tempat", "Posyandu Anggrek", MyIcon.home),
+                    listItem("NIK Bayi", controller.penimbangan.bayi!.id!,
+                        MyIcon.people),
+                    listItem("Nama Bayi", controller.penimbangan.bayi!.nama!,
+                        MyIcon.people),
+                    listItem("Tanggal", controller.penimbangan.tanggal!,
+                        Icons.date_range),
+                    listItem("Tempat", controller.penimbangan.posyandu!.nama!,
+                        MyIcon.home),
                   ],
                 )),
-            Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(15),
-                width: Get.width,
-                color: Colors.white,
-                child: Column(children: [
-                  listItem("Bidan", "Della Marisa", MyIcon.people)
-                ])),
+            // Container(
+            //     margin: const EdgeInsets.only(bottom: 10),
+            //     padding: const EdgeInsets.all(15),
+            //     width: Get.width,
+            //     color: Colors.white,
+            //     child: Column(children: [
+            //       listItem("Bidan", "Della Marisa", MyIcon.people)
+            //     ])),
             Container(
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.all(15),
@@ -75,12 +82,18 @@ class RiwayatView extends GetView<RiwayatController> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Flexible(
-                          child: listItem("Tinggi Badan", "65", MyIcon.tall)),
+                          child: listItem(
+                              "Tinggi Badan",
+                              controller.penimbangan.tinggi.toString(),
+                              MyIcon.tall)),
                       SizedBox(
                         width: Get.width * 0.1,
                       ),
                       Flexible(
-                          child: listItem("Berat Badan", "9,56", MyIcon.scales))
+                          child: listItem(
+                              "Berat Badan",
+                              controller.penimbangan.berat.toString(),
+                              MyIcon.scales))
                     ])),
             Container(
                 margin: const EdgeInsets.only(bottom: 10),
@@ -88,8 +101,12 @@ class RiwayatView extends GetView<RiwayatController> {
                 width: Get.width,
                 color: Colors.white,
                 child: Column(children: [
-                  listItem("Umur", "9" + " bulan", Icons.date_range),
-                  listItem("Posisi", "Terlentang", MyIcon.distance)
+                  listItem(
+                      "Umur",
+                      controller.penimbangan.umur.toString() + " bulan",
+                      Icons.date_range),
+                  listItem(
+                      "Posisi", controller.penimbangan.posisi!, MyIcon.distance)
                 ])),
           ]),
         ));

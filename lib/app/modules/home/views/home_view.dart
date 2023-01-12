@@ -248,7 +248,10 @@ class HomeView extends GetView<HomeController> {
                                         top: (index == 0 ? 25 : 15),
                                         left: 10,
                                         right: 10,
-                                        bottom: (index + 1 == 10 ? 15 : 0)),
+                                        bottom: (index + 1 ==
+                                                controller.riwayat.length
+                                            ? 15
+                                            : 0)),
                                     decoration: const BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -294,7 +297,9 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                       selected: true,
                                       onTap: () {
-                                        Get.toNamed(Routes.RIWAYAT);
+                                        Get.toNamed(Routes.RIWAYAT,
+                                            arguments:
+                                                controller.riwayat[index]);
                                       },
                                     ),
                                   );

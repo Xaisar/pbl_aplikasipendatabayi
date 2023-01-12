@@ -1,11 +1,12 @@
+import 'package:aplikasipendatabayi/app/data/models/penimbangan_model.dart';
 import 'package:get/get.dart';
 
 class RiwayatController extends GetxController {
-  //TODO: Implement RiwayatController
+  var penimbangan = Penimbangan();
 
-  final count = 0.obs;
   @override
   void onInit() {
+    penimbangan = Get.arguments;
     super.onInit();
   }
 
@@ -16,5 +17,4 @@ class RiwayatController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

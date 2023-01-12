@@ -3,10 +3,11 @@ import 'package:aplikasipendatabayi/app/data/models/posyandu_model.dart';
 
 class Penimbangan {
   int? id;
-  int? idBayi;
+  String? idBayi;
   int? idPosyandu;
   double? tinggi;
   double? berat;
+  String? umur;
   String? posisi;
   String? tanggal;
   Bayi? bayi;
@@ -18,6 +19,7 @@ class Penimbangan {
       this.idPosyandu,
       this.tinggi,
       this.berat,
+      this.umur,
       this.posisi,
       this.tanggal,
       this.bayi,

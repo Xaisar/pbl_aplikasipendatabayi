@@ -1,18 +1,18 @@
 class Bayi {
-  int? id;
+  String? id;
   String? nama;
-  String? idPosyandu;
+  int? idPosyandu;
   String? tglLahir;
   String? jenisKelamin;
 
   Bayi({this.id, this.nama, this.idPosyandu, this.tglLahir, this.jenisKelamin});
 
   Bayi.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    nama = json['nama'];
+    id = json['id_bayi'];
+    nama = json['name_bayi'];
     idPosyandu = json['id_posyandu'];
     tglLahir = json['tgl_lahir'];
-    jenisKelamin = json['jenis_kelamin'];
+    jenisKelamin = json['jenis_kel'];
   }
 
   Map<String, dynamic> toJson() {

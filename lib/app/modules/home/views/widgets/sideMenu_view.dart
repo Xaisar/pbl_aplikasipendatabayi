@@ -6,7 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 class SideMenuView extends StatelessWidget {
-  const SideMenuView({super.key});
+  late int id;
+  late String nama;
+  late String posyandu;
+  late String alamat;
+
+  SideMenuView(this.id, this.nama, this.posyandu, this.alamat, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +53,7 @@ class SideMenuView extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(top: 10),
                     alignment: Alignment.centerLeft,
-                    child: Text('Nur Lailatul Hidayah',
+                    child: Text(nama,
                         maxLines: 2,
                         overflow: TextOverflow.clip,
                         style: GoogleFonts.roboto(
@@ -60,7 +65,7 @@ class SideMenuView extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(top: 5),
                     alignment: Alignment.centerLeft,
-                    child: Text('Posyandu Melati',
+                    child: Text(posyandu,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.roboto(
@@ -72,8 +77,7 @@ class SideMenuView extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(top: 5),
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        'Jl. Raya Karang Rejo, Kabat, Kec. Kabat, Banyuwangi, Jawa Timur',
+                    child: Text(alamat,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,

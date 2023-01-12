@@ -9,6 +9,8 @@ abstract class Routes {
   static const PENDATAAN = _Paths.PENDATAAN;
   static const INDEX = _Paths.INDEX;
   static const RIWAYAT = _Paths.RIWAYAT;
+  static const LIST_BAYI = _Paths.LIST_BAYI;
+  static const FORM_PENIMBANGAN = _Paths.FORM_PENIMBANGAN;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const PENDATAAN = '/pendataan';
   static const INDEX = '/index';
   static const RIWAYAT = '/riwayat';
+  static const LIST_BAYI = '/list-bayi';
+  static const FORM_PENIMBANGAN = '/form-penimbangan';
 }

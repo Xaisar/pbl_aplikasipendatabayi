@@ -1,13 +1,14 @@
-import 'package:aplikasipendatabayi/app/modules/pendataan/views/list_bayi_view.dart';
 import 'package:aplikasipendatabayi/my_icon_icons.dart';
-import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:aplikasipendatabayi/theme.dart';
 
 import 'package:get/get.dart';
 
-class FormPendataanView extends GetView {
-  const FormPendataanView({Key? key}) : super(key: key);
+import '../controllers/form_penimbangan_controller.dart';
+
+class FormPenimbanganView extends GetView<FormPenimbanganController> {
+  const FormPenimbanganView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final List<String> pilihPoisi = ['Terlentang', 'Berdiri'];

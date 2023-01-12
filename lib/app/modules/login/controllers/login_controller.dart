@@ -30,20 +30,20 @@ class LoginController extends GetxController {
               Get.offAllNamed(Routes.HOME, arguments: user.idPengguna);
             } else {
               Get.snackbar("Error", user.error!,
-                  backgroundColor: Colors.white, colorText: Colors.red);
+                  backgroundColor: Colors.transparent, colorText: Colors.white);
             }
           } else {
             Get.snackbar("Error", "Tidak Dapat Terhubung ke Server",
-                backgroundColor: Colors.white, colorText: Colors.red);
+                backgroundColor: Colors.transparent, colorText: Colors.white);
           }
         });
       } else {
         Get.snackbar("Error", "Format Email Tidak Benar",
-            backgroundColor: Colors.white, colorText: Colors.red);
+            backgroundColor: Colors.transparent, colorText: Colors.white);
       }
     } else {
       Get.snackbar("Error", "Data Tidak Boleh Kosong",
-          backgroundColor: Colors.white, colorText: Colors.red);
+          backgroundColor: Colors.transparent, colorText: Colors.white);
     }
   }
 

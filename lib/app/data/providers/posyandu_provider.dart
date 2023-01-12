@@ -18,7 +18,8 @@ class PosyanduProvider extends GetConnect {
   // }
 
   Future<Response> getPosyandu() async {
-    final response = await get("$url/api/viewAllPosyandu",
+    final dynamic body = json.encode({});
+    final response = await post("$url/api/viewAllPosyandu", body,
         headers: <String, String>{
           "Accept": "application/json",
           "Charset": "utf-8"

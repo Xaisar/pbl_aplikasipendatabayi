@@ -1,29 +1,30 @@
-import 'dart:convert';
-
 import 'package:aplikasipendatabayi/app/data/models/bayi_model.dart';
-import 'package:aplikasipendatabayi/app/data/models/posyandu_model.dart';
-import 'package:aplikasipendatabayi/app/data/providers/posyandu_provider.dart';
+import 'package:aplikasipendatabayi/app/data/providers/bayi_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PendataanController extends GetxController {
-  var searchPuskesmas = false.obs;
+class ListBayiController extends GetxController {
   RxBool view = false.obs;
   RxBool nullSafety = false.obs;
-  RxList<Posyandu> posyandu = (List<Posyandu>.of([])).obs;
+  var searchBayi = false.obs;
+  RxList<Bayi> bayi = (List<Bayi>.of([])).obs;
 
-  void listPosyandu() {
-    PosyanduProvider().getPosyandu().then((response) {
+  void lisBayi() {
+    BayiProvider().getBayis(Get.arguments).then((response) {
       print(response.statusCode);
       if (response.statusCode == 200) {
         if (response.body["data"].length != 0) {
-          print(response.body["data"][1].toString());
           print(response.body["data"].length);
           for (int i = 0; i < response.body["data"].length; i++) {
-            var data = Posyandu.fromJson(response.body["data"][i]);
-            posyandu.add(data);
+            var data = Bayi(
+                id: response.body["data"][i]["id_bayi"],
+                nama: response.body["data"][i]["name_bayi"].toString(),
+                idPosyandu: response.body["data"][i]["id_posyandu"],
+                tglLahir: response.body["data"][i]["tgl_lahir"],
+                jenisKelamin: response.body["data"][i]["jenis_kel"]);
+            bayi.add(data);
           }
-          print(posyandu.toString());
+          print(bayi.toString());
           view.value = true;
           nullSafety.value = true;
         } else {
@@ -48,9 +49,10 @@ class PendataanController extends GetxController {
 
   @override
   void onInit() {
-    view.value = false;
+    print(Get.arguments);
     nullSafety.value = false;
-    listPosyandu();
+    view.value = false;
+    lisBayi();
     super.onInit();
   }
 

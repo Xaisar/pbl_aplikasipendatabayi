@@ -24,11 +24,21 @@ class BayiProvider extends GetConnect {
   //       });
   //   return response;
   // }
-
-  Future<Response> postBayis(int id) async {
+  Future<Response> getBayis(String id) async {
     final dynamic body = json.encode({"id": id});
 
     final response = await post("$url/api/viewLimitAllBayi", body,
+        headers: <String, String>{
+          "Accept": "application/json",
+          "Charset": "utf-8"
+        });
+    return response;
+  }
+
+  Future<Response> postBayis(String id) async {
+    final dynamic body = json.encode({"id": id});
+
+    final response = await post("$url/api/viewBayi", body,
         headers: <String, String>{
           "Accept": "application/json",
           "Charset": "utf-8"

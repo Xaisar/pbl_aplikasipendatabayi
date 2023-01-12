@@ -1,15 +1,15 @@
 import 'package:aplikasipendatabayi/app/routes/app_pages.dart';
+import 'package:aplikasipendatabayi/my_icon_icons.dart';
 import 'package:aplikasipendatabayi/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:aplikasipendatabayi/my_icon_icons.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../controllers/pendataan_controller.dart';
+import '../controllers/list_bayi_controller.dart';
 
-class PendataanView extends GetView<PendataanController> {
-  PendataanView({Key? key}) : super(key: key);
+class ListBayiView extends GetView<ListBayiController> {
+  const ListBayiView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,8 @@ class PendataanView extends GetView<PendataanController> {
         ? const Center(child: CircularProgressIndicator())
         : Scaffold(
             backgroundColor: Colors.white,
-            appBar: (controller.searchPuskesmas.value
-                ? appBarSearch()
-                : appBarNormal()),
+            appBar:
+                (controller.searchBayi.value ? appBarSearch() : appBarNormal()),
             body: Stack(
               fit: StackFit.loose,
               children: [
@@ -39,18 +38,16 @@ class PendataanView extends GetView<PendataanController> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black)))
                     : ListView.builder(
-                        itemCount: controller.posyandu.length,
+                        itemCount: controller.bayi.length,
                         itemBuilder: (contex, index) {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
                                   margin: const EdgeInsets.only(
                                       top: 15, left: 20, right: 20),
                                   decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.grey),
+                                      border: Border.all(color: Colors.white),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(10)),
                                       color: Colors.white,
@@ -61,18 +58,15 @@ class PendataanView extends GetView<PendataanController> {
                                   child: ListTile(
                                     selected: true,
                                     onTap: () {
-                                      Get.toNamed(Routes.LIST_BAYI,
-                                          arguments: controller
-                                              .posyandu[index].id!
-                                              .toString());
+                                      Get.toNamed(Routes.FORM_PENIMBANGAN);
                                     },
                                     leading: Icon(
-                                      MyIcon.home,
-                                      size: 40,
+                                      MyIcon.people,
                                       color: green1,
+                                      size: 40,
                                     ),
                                     title: Text(
-                                      controller.posyandu[index].nama!,
+                                      controller.bayi[index].nama!,
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: GoogleFonts.roboto(
@@ -80,16 +74,15 @@ class PendataanView extends GetView<PendataanController> {
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black),
                                     ),
-                                    subtitle: Text(
-                                        controller.posyandu[index].alamat!,
+                                    subtitle: Text(controller.bayi[index].id!,
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 14,
+                                            fontSize: 17,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.grey[700])),
                                   )),
-                              (index + 1 == 10
+                              (index + 1 == controller.bayi.length
                                   ? const SizedBox(height: 15)
                                   : const SizedBox())
                             ],
@@ -118,7 +111,7 @@ class PendataanView extends GetView<PendataanController> {
       actions: [
         TextButton(
           onPressed: () {
-            controller.searchView(controller.searchPuskesmas);
+            controller.searchView(controller.searchBayi);
           },
           child: Container(
             alignment: Alignment.center,
@@ -154,7 +147,7 @@ class PendataanView extends GetView<PendataanController> {
       actions: [
         IconButton(
             onPressed: () {
-              controller.searchClose(controller.searchPuskesmas);
+              controller.searchClose(controller.searchBayi);
             },
             icon: const Icon(Icons.close, color: Colors.black))
       ],
@@ -164,13 +157,11 @@ class PendataanView extends GetView<PendataanController> {
           color: Colors.white,
         ),
         child: TextFormField(
-          style: GoogleFonts.roboto(fontSize: 18),
+          style: GoogleFonts.roboto(fontSize: 16),
           keyboardType: TextInputType.name,
           decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              focusColor: Colors.blue,
+              focusColor: Colors.white,
+              prefixIconColor: Colors.blue,
               prefixIcon: Icon(
                 Icons.search,
                 color: Colors.black,

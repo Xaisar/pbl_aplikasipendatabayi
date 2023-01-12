@@ -246,8 +246,8 @@ class HomeView extends GetView<HomeController> {
                                         vertical: 10),
                                     margin: EdgeInsets.only(
                                         top: (index == 0 ? 25 : 15),
-                                        left: 20,
-                                        right: 20,
+                                        left: 10,
+                                        right: 10,
                                         bottom: (index + 1 == 10 ? 15 : 0)),
                                     decoration: const BoxDecoration(
                                         color: Colors.white,
